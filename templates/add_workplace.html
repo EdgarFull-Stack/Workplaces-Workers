@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang='lt'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Add workplace</title>
+        <link rel='stylesheet' href="{{ url_for('static', filename='styles.css') }}">
+    </head>
+    <body>
+        <h1>Add workplace</h1>
+        <form action='/add-workplace' method='post'>
+            <p><label>Name: <input type='text' name='nameinput'></label></p>
+            <p><label>City: <input type='text' name='cityinput'></label></p>
+            <p><input type='submit' value='Add'></p>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang='lt'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Edit worker</title>
+        <link rel='stylesheet' href="{{ url_for('static', filename='styles.css') }}">
+    </head>
+    <body>
+        <h1>Edit worker</h1>
+        <form action='/edit-worker/{{ worker_row.id }}' method='post'>
+            <p><label>Name: <input type='text' name='nameinput' value='{{ worker_row.person_name }}'></label></p>
+            <p><label>Lastname: <input type='text' name='lastnameinput' value='{{ worker_row.lastname }}'></label></p>
+            <p><label>Position: <input type='text' name='positioninput' value='{{ worker_row.position }}'></label></p>
+            <p><label>Company ID: <input type='number' name='companyidinput' value='{{ worker_row.workplace_id }}'></label></p>
+            <p><input type='submit' value='Change'></p>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+h1 {
+    color: #222;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background-color: #007BFF;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+td a {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 5px;
+    margin: 2px;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+a[href^='/edit-workplace'] {
+    background: #ffc107;
+    color: #fff;
+}
+
+a[href^='/edit-workplace']:hover {
+    background: #e0a800;
+}
+
+a[href^='/workplace/'] {
+    background: #17a2b8;
+    color: #fff;
+}
+
+a[href^='/workplace/']:hover {
+    background: #138496;
+}
+
+form {
+    display: inline-block;
+    margin: 0;
+}
+
+input[type='submit'] {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+input[type='submit']:hover {
+    background: #c82333;
+}
+input[type='text'] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}

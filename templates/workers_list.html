@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang='lt'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Workers List</title>
+        <link rel='stylesheet' href="{{ url_for('static', filename='styles.css') }}">
+    </head>
+    <body>
+        <h1>Workers list</h1>
+        <p><a href='/add-worker'>Add new worker</a></p>
+        <p><a href='/'>Workplaces</a></p>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Lastname</th>
+                    <th>Position</th>
+                    <th>Company ID</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for worker in workers %}
+                <tr>
+                    <td>{{ worker.id }}</td>
+                    <td>{{ worker.person_name }}</td>
+                    <td>{{ worker.lastname }}</td>
+                    <td>{{ worker.position }}</td>
+                    <td>{{ worker.workplace_id }}</td>
+                    <td>
+                        <a href='/edit-worker/{{ worker.id }}'>Edit</a>
+                        <form action='/delete-worker/{{ worker.id }}' method='post'>
+                            <input type='submit' value='Delete'>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </body>
+</html>

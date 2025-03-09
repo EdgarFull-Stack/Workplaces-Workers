@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang='lt'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Add worker</title>
+        <link rel='stylesheet' href="{{ url_for('static', filename='styles.css') }}">
+    </head>
+    <body>
+        <h1>Add worker</h1>
+        <form action='/add-worker' method='post'>
+            <p><label>Name: <input type='text' name='nameinput'></label></p>
+            <p><label>Lastname: <input type='text' name='lastnameinput'></label></p>
+            <p><label>Position: <input type='text' name='positioninput'></label></p>
+            <p><label>Company ID: <input type='number' name='companyidinput'></label></p>
+            <p><input type='submit' value='Add'></p>
+        </form>
+    </body>
+</html>

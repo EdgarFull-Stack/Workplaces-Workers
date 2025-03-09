@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang='lt'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Workplaces</title>
+        <link rel='stylesheet' href="{{ url_for('static', filename='styles.css') }}">
+    </head>
+    <body>
+        <h1>Workplaces list</h1>
+        <p><a href='/add-workplace'>Add new workplace</a></p>
+        <p><a href='/workers-list'>Workers list</a></p>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>City</th>
+                    <th>Workers quantity</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for workplace in workplaces %}
+                <tr>
+                    <td>{{ workplace.id }}</td>
+                    <td>{{ workplace.name }}</td>
+                    <td>{{ workplace.city }}</td>
+                    <td>{{ workplace.workers_quantity}}</td>
+                    <td>
+                        <a href='/workplace/{{ workplace.id }}'>Details</a>
+                        <a href='/edit-workplace/{{ workplace.id }}'>Edit</a>
+                        <form action='/delete-workplace/{{ workplace.id }}' method='post'>
+                            <input type='submit' value='Delete'>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </body>
+</html>

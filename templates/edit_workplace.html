@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang='lt'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Edit workplace</title>
+        <link rel='stylesheet' href="{{ url_for('static', filename='styles.css') }}">
+    </head>
+    <body>
+        <h1>Edit workplace</h1>
+        <form action='/edit-workplace/{{ workplace_row.id }}' method='post'>
+            <p><label>Name: <input type='text' name='nameinput' value='{{ workplace_row.name }}'></label></p>
+            <p><label>City: <input type='text' name='cityinput' value='{{ workplace_row.city }}'></label></p>
+            <p><input type='submit' value='Change'></p>
+        </form>
+    </body>
+</html>
