@@ -13,8 +13,8 @@ db = SQLAlchemy(app)
 class Workplace(db.Model):
     __tablename__ = 'workplace'
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String)
-    city = db.Column(db.String)
+    name = db.Column(db.String, nullable=False, unique=True)
+    city = db.Column(db.String, nullable=False)
     workers = db.relationship('Worker', backref='workplace')
 
     @property
@@ -31,9 +31,9 @@ class Workplace(db.Model):
 class Worker(db.Model):
     __tablename__ = 'worker'
     id = db.Column(db.Integer, primary_key=True)
-    person_name = db.Column(db.String)
-    lastname = db.Column(db.String)
-    position = db.Column(db.String)
+    person_name = db.Column(db.String, nullable=False)
+    lastname = db.Column(db.String,nullable=False)
+    position = db.Column(db.String, nullable=False)
     workplace_id = db.Column(db.Integer, db.ForeignKey('workplace.id'), nullable=False)
 
 
